@@ -5,7 +5,6 @@ Lazy-Loading을 통해 초기 로딩 속도를 개선할 수 있다. 특히 앱�
 Lazy-Loading을 적용하는 간단한 앱을 만들어보았다.
 https://angularfirebase.com/lessons/how-to-lazy-load-components-in-angular-4-in-three-steps/ 을 참고했다.
 
-<br>
 ## 라우팅 기능이 있는 앱을 하나 만들자
 
 root URL에서 기본적으로 AppComponent를 로드하는데, 사용자가 lazy/load-me 로 이동했을 때 lazy module이 비동기로 로딩되도록 하려고 한다. 
@@ -20,7 +19,6 @@ app component의 버튼에 lazy/load-me로 가는 링크를 달아준다.
 <button routerLink="/lazy/load-me"></button>
 <router-outlet></router-outlet>
 ```
-<br>
 ## 그리고, Lazy Module을 만들자.
 
 ```
@@ -36,7 +34,6 @@ Lazy Module에 `RouterModule`을 import를 하고
 1. route path를 `path: 'load-me'`
 2. RouterModule.forChild(routes)를 @NgModule({})의 메타데이터로 추가한다.
 
-<br>
 ## 앱 라우터에게 LazyModule을 로딩하라고 알려주자
 
 RoutingModule에 route path에 `loadChildren` 프로퍼티를 추가한다.
@@ -48,7 +45,6 @@ const routes: Routes = [
 ];
 ```
 
-<br>
 ## Lazy-Loading이 동작 확인하기
 
 크롬 개발자 도구에서 network 탭을 클릭해서 확인할 수 있다.
